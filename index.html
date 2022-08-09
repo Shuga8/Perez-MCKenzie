@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://perezimmigration.netlify.app/">
+    <meta property="og:image" content="https://perezimmigration.netlify.app/imgs/logo-header.jpg">
     <meta property="og:title" content="Perez McKenzie Immigration Services">
     <meta property="og:description"
         content="Perez McKenzie Immigration Services Is Highly Suffisticated High Order Immigrational Services In Over 100+ Countries All Over The World">
     <meta property="og:url" content="https://perezimmigration.netlify.app/">
     <meta property="og:site_name" content="Perez McKenzie Immigration Services">
-    <title>Home || Perez McKenzie Immigration Services</title>
+    <title>Home - Perez McKenzie Immigration Services</title>
     <script src="https://kit.fontawesome.com/cfbcf59bd3.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,19 +25,24 @@
 
 <body style="min-height: 100vh;padding-bottom:2em;background-color: #fff;">
 
+    <style>
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
     <header>
         <img src="./imgs/logo-header.jpg" alt="Logo" class="img-responsive">
     </header>
 
     <style>
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
+
     </style>
 
-    <nav id="nav" class="navbar navbar-default" style="background-color: rgb(52, 87, 85);border: none;color:#fff;">
+    <nav id="nav" class="navbar navbar-default"
+        style="background-color: rgb(52, 87, 85);border: none;color:#fff;position: sticky;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -79,7 +85,7 @@
     </nav>
 
 
-    <div class="container-fluid" style="height: 300px;margin-top: 4em;">
+    <div id="nay" class="container-fluid" style="height: 300px;margin-top: 4em;">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -122,27 +128,60 @@
         .logo-and-text {
             margin-top: 4em;
             padding: 1em;
+            display: flex;
+            justify-content: space-around;
+
         }
 
         .logo-and-text img {
-            object-fit: cover;
+            width: 300px;
+            object-fit: contain;
+            flex: 1;
+        }
 
+        .logo-and-text img.contain {
+            object-fit: contain;
+            flex: 1;
+        }
+
+        @media screen and (max-width: 900px) {
+            .logo-and-text {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+
+            }
+
+            .logo-and-text img {
+                object-fit: contain;
+                flex: 1;
+            }
+
+            .logo-and-text img.contain {
+                object-fit: contain;
+                flex: 1;
+            }
         }
     </style>
 
     <div class="container-fluid logo-and-text">
         <img src="./imgs/Roller2.png" alt="Perez McKenzie Logo" class="img-responsive">
+        <img src="./imgs/CICC_Logo.svg-460x295.png" alt="CICC" class="img-responsive contain">
     </div>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .big-container {
             color: #000;
+            min-height: 200px;
         }
 
         .grid-33-layout {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
             padding: 2em;
             grid-gap: 2em;
         }
@@ -218,12 +257,57 @@
             background-color: rgba(161, 126, 12, 0.568);
         }
 
+        .back-to-top {
+            background-color: rgb(7, 122, 112);
+            width: 40px;
+            height: 40px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            position: fixed;
+            bottom: 0px;
+            right: 2px;
+            border-radius: 25px;
+            padding: 1em;
+            transition: ease-in-out .25s;
+        }
+
+
+        .back-to-top .fa-arrow-up {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width: 800px) {
+            .grid-33-layout {
+                display: grid;
+                grid-template-columns: 1.5fr 1.5fr;
+                padding: 1em;
+                grid-gap: 1em;
+            }
+
+            .grid-33-layout>div {
+                background-color: #ddd;
+                padding: 2em;
+                box-shadow: 1px 0px 3px #ddd;
+            }
+
+            .grid-33 h3 {
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 800;
+                margin-bottom: 1em;
+                text-transform: uppercase;
+            }
+        }
+
 
         @media screen and (max-width: 740px) {
             .grid-33-layout {
                 display: grid;
-                grid-template-columns: 1.4fr 1.4fr;
-                grid-template-rows: 1.4fr 1.4fr;
+                grid-template-columns: 1.5fr 1.5fr;
                 padding: 1em;
                 grid-gap: 1em;
             }
@@ -248,8 +332,7 @@
         @media screen and (max-width: 700px) {
             .grid-33-layout {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1.5fr 1.5fr;
                 padding: 1em;
                 grid-gap: 1em;
             }
@@ -273,7 +356,29 @@
             .grid-33-layout {
                 display: grid;
                 grid-template-columns: 1.2fr 1.2fr;
-                grid-template-rows: 1.2fr 1.2fr;
+                padding: 1em;
+                grid-gap: 1em;
+            }
+
+            .grid-33-layout>div {
+                background-color: #ddd;
+                padding: 2em;
+                box-shadow: 1px 0px 3px #ddd;
+            }
+
+            .grid-33-layout>div h3 {
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 800;
+                margin-bottom: 1em;
+                text-transform: uppercase;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .grid-33-layout {
+                display: grid;
+                grid-template-columns: 0.5fr 0.5fr;
                 padding: 1em;
                 grid-gap: 1em;
             }
@@ -297,7 +402,6 @@
             .grid-33-layout {
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
                 padding: 1em;
                 grid-gap: 1em;
             }
@@ -318,6 +422,11 @@
         }
     </style>
 
+    <div class="container back-to-top">
+        <a href="#nav" style="text-decoration: none;"><i class="fa-solid fa-arrow-up"></i></a>
+
+    </div>
+
     <section class="container-fluid big-container">
         <h2 class="about">About Us</h2>
 
@@ -326,7 +435,11 @@
         <div class="grid-33-layout">
             <div class="grid-33">
 
-                <img src="./imgs/BBB-Accreditation.jpg" alt="">
+                <div class="center">
+
+                    <img src="./imgs/BBB-Accreditation.jpg" alt="" class="img-responsive">
+
+                </div>
 
                 <h3>Trustworthy and Caring</h3>
                 <hr class="hr">
@@ -371,64 +484,195 @@
             .big-container .contact-info {
                 font-size: 1.3rem;
                 text-align: center;
-                margin: 1.4em;
+                margin: 0.7rem;
             }
 
-            .big-container input {
-                display: block;
-                margin: 1rem auto 1rem auto;
-                width: 70%;
-                height: 40px;
-                outline: none;
+
+
+            .media p {
                 text-align: center;
-                box-shadow: 5px 5px 5px rgb(211, 178, 70);
-                border: 1px solid rgb(211, 178, 70);
+                font-weight: 700;
+                font-style: italic;
+                margin-bottom: 4em;
             }
 
-            .big-container input[type='submit'] {
-                box-shadow: 5px 5px 5px rgb(238, 235, 188);
-                border: none;
-                background-color: rgba(201, 159, 21, 0.705);
-            }
-
-            .big-container textarea {
+            .media-icons {
+                width: 100%;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem auto 1rem auto;
-                width: 70%;
-                min-height: 150px;
-                outline: none;
-                text-align: center;
-                box-shadow: 5px 5px 5px rgb(211, 178, 70);
-                border: 1px solid rgb(211, 178, 70);
+                justify-content: space-between;
             }
 
-            .big-container .btn-submit {
-                width: 70%;
-                margin: 1em auto;
+            .media-icons .fa-facebook {
+                font-size: 3.5em;
+                color: #00a;
+            }
+
+            .media-icons .fa-twitter {
+                font-size: 3.5em;
+                color: rgb(105, 0, 204);
+            }
+
+            .media-icons .fa-instagram {
+                font-size: 3.5em;
+                color: rgb(248, 20, 58);
+            }
+
+            .write {
+                width: 100%;
+            }
+
+            .write p {
+                margin-top: 3em;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1em;
+                word-spacing: 4px;
+            }
+
+            .write .fa-pen {
+                color: #a00;
+                font-size: 1.5em;
             }
         </style>
 
-        <h2 class="contact">Contact Us</h2>
+        <div class="container contact-us">
 
-        <hr class="fin">
-        <p class="contact-info"><i>Write a message to us</i></p>
+            <h2 class="contact">Contact Us</h2>
 
+            <hr class="fin">
 
-        <form action="" method="post">
-            <input type="text" placeholder="Your firstname">
-            <input type="text" placeholder="Your lastname">
-            <textarea cols="30" rows="10" placeholder="Write your message here"></textarea>
-            <input type="submit" class="btn-submit" value="Submit Message">
-        </form>
+            <div class="container media">
+
+                <p>You can Contact Us On Social Media</p>
+
+                <div class="container media-icons">
+
+                    <a href="" style="text-decoration: none;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="" style="text-decoration: none;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href="" style="text-decoration: none;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="write">
+                <p>You Can Also Write To Us Here <a href=""><i class="fa-solid fa-pen"></i></a></p>
+            </div>
+
+        </div>
+
     </section>
+
+    <style>
+        .footer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .footer .footer-images {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer-images img {
+            object-fit: contain;
+            flex: 1;
+        }
+
+        @media screen and (max-width: 900px) {
+            .footer .footer-images {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .footer-images img {
+                object-fit: contain;
+                flex: 1;
+            }
+        }
+
+        .citation {
+            background-color: #000;
+            width: 100%;
+            margin-top: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            margin-top: 2em;
+            margin-bottom: -2em;
+
+        }
+
+        .citation p {
+            color: #fff;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 200;
+        }
+    </style>
+
+
+    <footer class="footer">
+
+        <div class="container footer-images">
+            <img src="./imgs/bbb-footer.png" alt="footer-logo" class="img-responsive">
+
+            <img src="./imgs/moving2canadapm.jpg" alt="logo" class="img-responsive">
+
+            <img src="./imgs/logo-header.jpg" alt="logo" class="img-responsive">
+
+
+        </div>
+
+        <div class="citation">
+            <cite>
+                <p> 2022, &copy; Grand Aspirations &trade; &reg;</p>
+            </cite>
+        </div>
+
+    </footer>
 
 
     <script>
 
-        const navbar = document.querySelector('#nav')
-        let sticky = navbar.offsetBottom
+
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect()
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            )
+
+        }
+
+        const navbar = document.querySelector('#nay')
+
+        document.addEventListener('scroll', function () {
+            const message = isInViewport(navbar) ? "Present" : "Not Present"
+
+            if (message == "Present") {
+                document.querySelector('.back-to-top').style.display = 'none'
+            }
+
+            if (message == "Not Present") {
+                document.querySelector('.back-to-top').style.display = 'flex'
+            }
+        })
 
 
     </script>
